@@ -1,0 +1,28 @@
+.link {
+  padding-bottom: 13px;
+  border-bottom: 1px solid $accent;
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: rem(20);
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $accent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  svg {
+    transition: $transition;
+  }
+
+  &:hover,
+  &:focus {
+    color: $accent-hover;
+    border-color: $accent-hover;
+
+    svg path {
+      fill: $accent-hover;
+    }
+  }
+}

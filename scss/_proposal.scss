@@ -1,0 +1,123 @@
+.proposal {
+  padding-top: 195px;
+  padding-bottom: 188px;
+  overflow-x: clip;
+  overflow-y: visible;
+
+  @media screen and (max-width: 991px) {
+    padding-top: 155px;
+    padding-bottom: 155px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-top: 125px;
+    padding-bottom: 125px;
+  }
+
+  &__container {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 5%;
+      left: -24%;
+      z-index: -1;
+      width: 842px;
+      height: 1456px;
+      background-image: url("../img/proposal-decor.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+
+      @media screen and (max-width: 1435px) {
+        top: 55%;
+      }
+
+      @media screen and (max-width: 991px) {
+        left: -35%;
+      }
+
+      @media screen and (max-width: 768px) {
+        top: 65%;
+        left: -35%;
+      }
+
+      @media screen and (max-width: 575px) {
+        left: -55%;
+        transform: scale(1.1);
+      }
+
+      @media screen and (max-width: 475px) {
+        left: -65%;
+      }
+
+      @media screen and (max-width: 420px) {
+        top: 70%;
+        left: -95%;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 90px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 70px;
+    }
+
+    b {
+      letter-spacing: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 90px 28px;
+
+    @media screen and (max-width: 768px) {
+      gap: 70px 28px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 450px;
+    max-width: 450px;
+
+    @media screen and (max-width: 1435px) {
+      flex: 1 1 45%;
+      max-width: 45vw;
+    }
+
+    @media screen and (max-width: 991px) {
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex: 1 1 100%;
+      max-width: 95%;
+    }
+
+    @media screen and (max-width: 575px) {
+      max-width: 100%;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 42px;
+    }
+
+    h3 {
+      margin-bottom: 21px;
+    }
+
+    p {
+      letter-spacing: 0.01em;
+    }
+  }
+}

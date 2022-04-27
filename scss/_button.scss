@@ -1,0 +1,20 @@
+.btn {
+  padding: 16px 29px 14px;
+  border-radius: 50px;
+  background: $accent;
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $darkWhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  &:hover,
+  &:focus {
+    background: $accent-hover;
+  }
+}

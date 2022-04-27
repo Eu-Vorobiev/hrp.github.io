@@ -1,0 +1,153 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $content-font;
+  font-size: 18px;
+  background: $darkWhite;
+  min-height: 100vh;
+
+  &.page {
+    @include pageFlex;
+  }
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+span {
+  display: inline-flex;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-flex;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: $transition;
+}
+
+button,
+.btn {
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+  transition: $transition;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  @media screen and (max-width: 768px) {
+    padding: 0 20px;
+  }
+}
+
+.logo {
+  &:hover {
+    opacity: .7;
+  }
+}
+
+h1 {
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: clamp(rem(45), 5vw, rem(72));
+  line-height: 97%;
+  letter-spacing: 0.02em;
+  color: $titleBlack;
+}
+
+h2 {
+  font-family: $title-font;
+  font-weight: 500;
+  font-size: clamp(rem(32), 4vw, rem(48));
+  line-height: 140%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $titleBlack;
+}
+
+h3 {
+  font-family: $title-font;
+  font-weight: 400;
+  font-size: clamp(rem(24), 4vw, rem(32));
+  line-height: 137%;
+  text-transform: uppercase;
+  color: $titleBlack;
+}
+
+p {
+  font-family: $content-font;
+  font-weight: 400;
+  font-size: clamp(rem(16), 3vw, rem(18));
+  line-height: 160%;
+  color: $contentBlack;
+  letter-spacing: 0.07em;
+}
+
+.mt {
+  margin-top: 195px;
+
+  @media screen and (max-width: 991px) {
+    margin-top: 155px;
+  }
+
+  @media screen and (max-width: 575px) {
+    margin-top: 125px;
+  }
+}
+
+.pb {
+  padding-bottom: 195px;
+
+  @media screen and (max-width: 991px) {
+    padding-bottom: 155px;
+  }
+
+  @media screen and (max-width: 575px) {
+    padding-bottom: 125px;
+  }
+}
