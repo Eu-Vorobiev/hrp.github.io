@@ -50,4 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   };
+
+  // FORM VALIDATION
+  
+  document.querySelector('#name').addEventListener('keyup', function () {
+    this.value = this.value.replace(/[\d]/g, '');
+  }, 'paste', function () {
+    return false
+  });
 });

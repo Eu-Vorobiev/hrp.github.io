@@ -1,6 +1,6 @@
 <?php
-	$name   	= filter_var($_POST["name"], FILTER_SANITIZE_STRING);
-	$phone    = filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
+	$name    		= filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+	$phone     	= filter_var($_POST["phone"], FILTER_SANITIZE_STRING);
 	$errors;
 
 	$recaptcha = $_POST['g-recaptcha-response'];
@@ -9,7 +9,7 @@
     //Получаем HTTP от recaptcha
     $recaptcha = $_REQUEST['g-recaptcha-response'];
     //Сюда пишем СЕКРЕТНЫЙ КЛЮЧ, который нам присвоил гугл
-    $secret = '6LexSVccAAAAAAwRlln7ty80-dOgcvpUN0dDMt7U';
+    $secret = '6Ld7CKsfAAAAABlT4SdfUbiOrdLqLiKJP8NMTr-8';
     //Формируем utl адрес для запроса на сервер гугла
     $url = "https://www.google.com/recaptcha/api/siteverify?secret=".$secret ."&response=".$recaptcha."&remoteip=".					$_SERVER['REMOTE_ADDR'];
  
@@ -28,25 +28,23 @@
  
     //Смотрим на результат
     if($curlData['success']) {
-
-			if ( empty($name)) {
-				$errors = "Будь ласка, введіть Ваше ім'я";
+			if (empty($name)) {
+				$errors = "Будьте добры, введите сумму кредита";
 			} else {
 				$userName = $name;
 			}
 
 			if (empty($phone)) {
-				$errors = "Будь ласка, введіть номер телефону";
+				$errors = "Будьте добры, введите номер телефона компании";
 			} else {
-				$userPhone_Telegram = $phone;
+				$userPhone = $phone;
 			}
 
-			$to1 = "hrupp@gmail.com";
-			$to2 = "dijjekas06@gmail.com";
+			$to = "info@hrupp.com";
 			$mailBody .= "Ім'я користувача: " . $userName . "\n";
-			$mailBody .= "Телефон користувача: " . $userPhone_Telegram . "\n";
+			$mailBody .= "Телефон користувача: " . $userPhone . "\n";
 			
-			if (mail($to1, 'Вам прийшла заявка з сайту Hrupp', $mailBody) && mail($to2, 'Вам прийшла заявка з сайту Hrupp', $mailBody)) {
+			if (mail($to, 'Вам пришла заявка з сайту Hrupp', $mailBody)) {
 				$output = "ok";
 				die($output);
 			}	$output = $errors;
