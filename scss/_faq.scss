@@ -84,15 +84,15 @@
     display: flex;
     flex-direction: column;
     max-width: 945px / 1440px *100%;
-    align-self: end;
-
+    margin-left: auto;
+    
     @media screen and (max-width: 1200px) {
       max-width: 80%;
     }
 
     @media screen and (max-width: 991px) {
       max-width: 100%;
-      align-self: start;
+      margin-left: 0;
     }
   }
 
