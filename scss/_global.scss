@@ -14,10 +14,7 @@ body {
   font-size: 18px;
   background: $darkWhite;
   min-height: 100vh;
-
-  @media screen and (max-width: 768px) {
-    overflow-x: hidden;
-  }
+  overflow-x: hidden;
 
   &.page {
     @include pageFlex;
