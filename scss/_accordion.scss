@@ -5,12 +5,7 @@
   &__item {
     &.close .accordion__info {
       height: 0px;
-      transition: height .3s ease-out;
-      -webkit-transform: scaleY(0);
-      -o-transform: scaleY(0);
-      -ms-transform: scaleY(0);
-      transform: scaleY(0);
-      transition: all .3s ease-in-out;
+      opacity: 0;
     }
 
     &.open .accordion__ico::before {
@@ -24,18 +19,7 @@
     &.open .accordion__info {
       height: 100%;
       padding-top: 40px;
-      -webkit-transform: scaleY(1);
-      -o-transform: scaleY(1);
-      -ms-transform: scaleY(1);
-      transform: scaleY(1);
-      -webkit-transform-origin: top;
-      -o-transform-origin: top;
-      -ms-transform-origin: top;
-      transform-origin: top;
-      -webkit-transition: -webkit-transform 0.3s ease-out;
-      -o-transition: -o-transform 0.3s ease;
-      -ms-transition: -ms-transform 0.3s ease;
-      transition: all 0.3s ease;
+      opacity: 1;
 
       @media screen and (max-width: 768px) {
         padding-top: 30px;
@@ -43,8 +27,6 @@
     }
 
     &:hover {
-      border-bottom: 1px solid $accent;
-
       .accordion__ico {
         transform: scale(.75);
       }
