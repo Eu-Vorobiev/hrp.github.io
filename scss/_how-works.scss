@@ -110,6 +110,7 @@
 
     img {
       max-width: 330px;
+      min-height: 233px;
 
       @media screen and (max-width: 920px) {
         grid-column: span 2;

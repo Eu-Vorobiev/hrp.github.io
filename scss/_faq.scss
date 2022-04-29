@@ -84,8 +84,9 @@
     display: flex;
     flex-direction: column;
     max-width: 945px / 1440px *100%;
-    margin-left: auto;
-    
+    margin-left: auto !important;
+    align-items: flex-end;
+
     @media screen and (max-width: 1200px) {
       max-width: 80%;
     }
@@ -93,6 +94,7 @@
     @media screen and (max-width: 991px) {
       max-width: 100%;
       margin-left: 0;
+      align-items: initial;
     }
   }
 
@@ -101,6 +103,11 @@
     border-bottom: 1px solid $grey;
     display: flex;
     flex-direction: column;
+    margin-left: auto;
+
+    @media screen and (max-width: 991px) {
+      margin-left: 0;
+    }
 
     @media screen and (max-width: 768px) {
       padding: 50px 0;

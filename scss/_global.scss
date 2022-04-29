@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  scroll-margin-top: 50px;
 }
 
 *,
@@ -14,11 +15,23 @@ body {
   font-size: 18px;
   background: $darkWhite;
   min-height: 100vh;
-  overflow-x: hidden;
+  // overflow-x: clip;
+
+  // @media screen and (-webkit-min-device-pixel-ratio:0) {
+  //   clip: auto;
+  //   -webkit-mask-image: -webkit-linear-gradient(top, $darkWhite);
+  // }
 
   &.page {
     @include pageFlex;
   }
+}
+
+#wrapper {
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  // height: 95vh;
+  position: relative;
 }
 
 main {
@@ -80,15 +93,6 @@ button,
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 15px;
-
-  @media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-    max-width: 720px;
-  }
 
   @media screen and (max-width: 768px) {
     padding: 0 20px;

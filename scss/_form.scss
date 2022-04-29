@@ -43,32 +43,20 @@
     color: $content-font;
     transition: $transition;
 
-    &:hover {
-      border: 1px solid $grey;
-    }
-
-    &:focus {
-      border: 1px solid red;
-
-      &::placeholder {
-        color: red;
-      }
-    }
-
     &:focus~span {
       transform: translateY(-20px);
       font-size: rem(14);
     }
 
-    @media screen and (max-width: 475px) {
+    @media screen and (max-width: 575px) {
       &:focus~span {
-        transform: translateY(-20px);
-        font-size: rem(13);
+        transform: translateY(0px);
+        font-size: rem(14);
       }
     }
 
     &:focus-within {
-      border: 1px solid $accent;
+      border-bottom: 1px solid $accent;
     }
   }
 
