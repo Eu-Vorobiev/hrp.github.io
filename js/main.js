@@ -1,9 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let anchors = document.querySelectorAll("#btn-cta");
-  let faqBtn = document.querySelectorAll(".accordion__head");
   let languageBox = document.querySelectorAll(".language");
-  let languageList = document.querySelector(".language__options");
-  let languageArrow = document.querySelector(".language__arrow");
 
   languageBox.forEach(box => {
     box.addEventListener("click", function (e) {
@@ -11,16 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
       this.querySelector(".language__arrow").classList.toggle("active");
     });
   });
-
-  /*
-  window.addEventListener("click", e => {
-    const target = e.target;
-    if (!target.closest(".language") && !target.closest(".language__options")) {
-      languageList.classList.remove("active");
-      languageArrow.classList.remove("active");
-    }
-  });
-  */
 
   for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
@@ -35,24 +22,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   };
 
-  // Accordion
-  for (let i = 0; i < faqBtn.length; i++) {
-    faqBtn[i].addEventListener("click", function () {
-      this.closest(".accordion__item").classList.toggle("active");
-      this.children[1].classList.toggle("active");
-      let faqInfo = this.nextElementSibling;
-      if (faqInfo.style.maxHeight) {
-        faqInfo.style.maxHeight = null;
-        faqInfo.classList.remove("shown");
-      } else {
-        faqInfo.style.maxHeight = faqInfo.scrollHeight + "px";
-        faqInfo.classList.add("shown");
-      }
-    });
-  };
+  let accItem = document.querySelectorAll('.accordion__item');
+  let accHD = document.querySelectorAll('.accordion__head');
+
+  for (i = 0; i < accItem.length; i++) {
+    accItem[i].className = 'faq__item accordion__item close';
+    accItem[0].className = 'faq__item accordion__item open';
+  }
+
+  function toggleItem() {
+    let itemClass = this.parentNode.className;
+    if (itemClass == 'faq__item accordion__item close') {
+      this.parentNode.className = 'faq__item accordion__item open';
+    } else {
+      this.parentNode.className = 'faq__item accordion__item close';
+    }
+  }
+  for (i = 0; i < accHD.length; i++) {
+    accHD[i].addEventListener('click', toggleItem);
+  }
+
 
   // FORM VALIDATION
-  
+
   document.querySelector('#name').addEventListener('keyup', function () {
     this.value = this.value.replace(/[\d]/g, '');
   }, 'paste', function () {
